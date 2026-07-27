@@ -110,7 +110,7 @@ export default function BasicCart() {
                     <ul className="list-group">
                         {
                             products.length === 0 ? (
-                                <li className="list-group-item">No products found.</li>
+                                <li className="list-group-item">No any products found.</li>
                             ) :
                             products.map(product => (
                                 <li key={product.id} className="list-group-item d-flex justify-content-between align-items-center">
