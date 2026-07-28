@@ -245,7 +245,7 @@ const Cart = () => {
                                             className="btn-add-to-cart"
                                             onClick={() => addToCart(product)}
                                         >
-                                            Add to Cart
+                                            <span className="btn-cart-icon">🛒</span> Add to Cart
                                         </button>
                                     </div>
                                 </div>
