@@ -5,6 +5,7 @@ const Cart = () => {
     const [searchText, setSearchText] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const [cartCount, setCartCount] = useState(0);
 
     useEffect(() => {
         setLoading(true);
@@ -29,6 +30,10 @@ const Cart = () => {
     const filteredProducts = products.filter((product) =>
         product.title.toLowerCase().includes(searchText.toLowerCase())
     );
+
+    const handleAddToCart = () => {
+        setCartCount((prevCount) => prevCount + 1);
+    };
 
     return (
         <div className="products-container">
@@ -67,7 +72,7 @@ const Cart = () => {
                     <button className="cart-button">
                         <span className="cart-icon">🛒</span>
                         <span className="cart-text">Cart</span>
-                        <span className="cart-count">0</span>
+                        <span className="cart-count">{cartCount}</span>
                     </button>
                 </div>
 
@@ -94,7 +99,7 @@ const Cart = () => {
                                     <p className="product-description">{product.description}</p>
                                     <div className="product-footer">
                                         <span className="product-price">${product.price.toFixed(2)}</span>
-                                        <button className="btn-add-to-cart">Add to Cart</button>
+                                        <button className="btn-add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
                                     </div>
                                 </div>
                             </div>
